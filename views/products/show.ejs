@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Detail</title>
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/products">Product List</a></h3>
+      <h1>Product Detail</h1>
+      <table>
+        <tbody>
+          <tr>
+            <td>Product Name</td>
+            <td>:</td>
+            <td><%= product.title %></td>
+          </tr>
+          <tr>
+            <td>Product Description</td>
+            <td>:</td>
+            <td><%= product.desc %></td>
+          </tr>
+          <tr>
+            <td>Product Category</td>
+            <td>:</td>
+            <td><%= product.category %></td>
+          </tr>
+          <tr>
+            <td>Product Price</td>
+            <td>:</td>
+            <td>Rs<%= product.price %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3><a href="/products/edit/<%= product._id%>">EDIT</a></h3>
+      <form action="/products/delete/<%= product._id%>" method="post">
+        <button type="submit">DELETE</button>
+      </form>
+    </div>
+  </body>
+</html>

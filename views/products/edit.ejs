@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit products</title>
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/products">Product List</a></h3>
+      <h1>Edit Product</h1>
+      <form action="/products/update/<%= product._id%>" method="post">
+        <table>
+          <tbody>
+            <tr>
+              <td>Title</td>
+              <td><input type="text" name="title" value="<%= product.title %>"/></td>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td><input type="text" name="desc" value="<%= product.desc %>"/></td>
+            </tr>
+            <tr>
+              <td>Category</td>
+              <td><input type="text" name="category" value="<%= product.category %>"/></td>
+            </tr>
+            <tr>
+              <td>Price</td>
+              <td><input type="number" name="price" value="<%= product.price %>"/></td>
+            </tr>
+            <tr>
+              <td>Image</td>
+              <td><input type="text" name="image" value="<%= product.image %>"/></td>
+            </tr>
+            <tr>
+              <td colspan="2"><button type="submit">Update</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
