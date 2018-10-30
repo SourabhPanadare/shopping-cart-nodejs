@@ -15,7 +15,31 @@
 
 # Environmental Setup on cpanel through putty
 
-    Reference:- https://hostiso.com/how-to-install-setup-node-js/
+    Reference:- https://ferugi.com/blog/nodejs-on-godaddy-shared-cpanel/
+    
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+    nvm --version
+    nvm install node
+    nvm alias default node
+
+    node -v
+    npm -v
+    npm list -g
+
+    cd appname/npm init
+    cd appname/npm install express --save
+    cd appname/touch app.js
+
+    app.js
+    const express = require('express')
+    const app = express()
+    const port = 3000
+
+    app.get('/', (req, res) => res.send('Hello World!'))
+
+    app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+    .htaccess
   
 # Setting Up MongoDB
 
