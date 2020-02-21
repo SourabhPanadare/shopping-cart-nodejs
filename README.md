@@ -16,7 +16,7 @@
 # Environmental Setup on cpanel through putty
 
     Reference:- https://ferugi.com/blog/nodejs-on-godaddy-shared-cpanel/
-    
+
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
     nvm --version
     nvm install node
@@ -26,21 +26,24 @@
     npm -v
     npm list -g
 
-    cd appname/npm init
-    cd appname/npm install express --save
-    cd appname/touch app.js
+    cd html/sourasaz/public_html/samplenodeapp
+    npm init
+    npm install express --save
+    touch app.js
 
-    app.js
+    app.js:-
     const express = require('express')
     const app = express()
-    const port = 3000
+    const port = 1500
 
     app.get('/', (req, res) => res.send('Hello World!'))
 
     app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
-    .htaccess
-  
+    .htaccess:-
+
+
+
 # Setting Up MongoDB
 
     Reference:- https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
@@ -103,15 +106,15 @@
       res.send('Hello World!')
     });
 
-    app.listen(3000, () => {
-      console.log('Example app listening on port 3000!')
+    app.listen(1500, () => {
+      console.log('Example app listening on port 1500!')
     });
 
 # Testing MongoDb Connection
 
     const MongoClient = require('mongodb').MongoClient;
 
-    MongoClient.connect("mongodb://localhost:27017/shoppingcart", function (err, database) {
+    MongoClient.connect("mongodb://localhost:27017/shoppingcarttest", function (err, database) {
 
         var db = database.db('shopping');
         db.collection('Product', function (err, collection) {
@@ -137,12 +140,14 @@
     app.js:- main node file
 
     routes/product.route.js
-    controller/product.controller.js
+    controller/productview.controller.js
     models/product.model.js
-    views/product.html,product.jade,product.hbs,product.ejs
+    views/create.ejs,edit.ejs,index.ejs,show.ejs
 
-    localhost:3000/products/test:- mvc testing
-    localhost:3000/products/create:- POST Method
-    localhost:3000/products/tableparam(id):- GET Method
-    localhost:3000/products/tableparam(id)/update:- PUT Method
-    localhost:3000/products/tableparam(id)/delete:- DELETE Method
+    localhost:1500/products:- mvc testing
+    localhost:1500/products/show/id:- GET Method
+    localhost:1500/products/create:- GET Method
+    localhost:1500/products/save:- POST Method
+    localhost:1500/products/edit/id:- GET Method
+    localhost:1500/products/update/id:- PUT Method
+    localhost:1500/products/delete/id:- DELETE Method

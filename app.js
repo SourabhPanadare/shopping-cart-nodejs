@@ -7,7 +7,7 @@ const productRoute = require('./routes/product.route'); // Imports routes for th
 // initialize our express app
 const app = express();
 
-//let mongoDB = 'mongodb://shoppingcart:shoppingcart1@ds119150.mlab.com:19150/shoppingcart';
+//let mongoDB = 'mongodb://shoppingcart:shoppingcart1@ds119150.mlab.com:19150/shoppingcarttest';
 
 mongoose.connect(config.dburl);
 mongoose.Promise = global.Promise;
@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/products', productRoute); //Route Defination
 
-let port = 3000;
+let port = 1510;
 
 app.listen(port, () => {
     console.log('Server is up and running on port number ' + port);
